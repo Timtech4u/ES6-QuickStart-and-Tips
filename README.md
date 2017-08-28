@@ -99,7 +99,7 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
       var circle = {
         PI: 3.14159,
-        C (r) {
+        c (r) {
           return 2 * this.PI * r
         }
       }
@@ -134,8 +134,8 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
     var c = new Cat ()
     var l = new Lion ()
-    C.speak ()
-    L.speak ()
+    c.speak ()
+    l.speak ()
     `` ``
 
     `` `js
@@ -194,15 +194,15 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
           this.options = options || {}
         }
 
-        Speak () {
+        speak () {
           console.log (this.voice)
         }
 
-        Get name () {
+        get name () {
           return this.options.name
         }
 
-        Set name (name) {
+        get name (name) {
           this.options.name = name
         }
       }
@@ -556,12 +556,12 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
         let cb
 
         if ('function' === type) {
-          Cb = args.pop ()
+          cb = args.pop ()
           if ('object' === typeof args [args.length - 1]) {
-            Opts = args.pop ()
+            opts = args.pop ()
           }
         } else if ('object' === type &&! Array.isArray (last)) {
-          Opts = args.pop ()
+          opts = args.pop ()
         } else if ('undefined' === type) {
           args.pop ()
           return parseArgs (... args)
@@ -1153,12 +1153,12 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
     // Weak Maps
     var wm = new WeakMap ();
-    Wm.set (s, {extra: 42});
-    Wm.size === undefined
+    wm.set (s, {extra: 42});
+    wm.size === undefined
 
     // Weak Sets
     var ws = new WeakSet ();
-    Ws.add ({data: 42});
+    ws.add ({data: 42});
     // Because the added object has no other references, it will not be held in the set
     `` ``
 
@@ -1234,7 +1234,7 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
       }
 
       const bar = {
-        N: 1,
+        n: 1,
 
         Add (i) {
           this.n + = i
@@ -1436,7 +1436,7 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
         Delay (0, 6),
       ])
 
-      Res.then (arr => {
+      res.then (arr => {
         console.log (arr) //?
       })
       `` ``
