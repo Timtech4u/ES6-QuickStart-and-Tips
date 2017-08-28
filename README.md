@@ -49,42 +49,42 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 ## ES6 new features
 
 
-### Arrows and Lexical This
+### Arrows and Lexical this
 
   "Arrow" function (`=>`) and `this`:
 
   > Use the "arrow" function we can experience the functional programming "beauty", efficient, simple, of course, also pay attention to the context `this`.
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     // old
-    Var sum = function (a, b) {return a + b}
+    var sum = function (a, b) {return a + b}
     `` ``
 
-    `` `Js
+    `` `js
     // new
-    Var sum = (a, b) => a + b
+    var sum = (a, b) => a + b
     `` ``
 
   Guess guess
 
     0. * a.js *
 
-      `` `Js
-      Var PI = 3.14
+      `` `js
+      var PI = 3.14
 
-      Var c = r => 2 * PI * r
+      var c = r => 2 * PI * r
 
       // c (2) =?
       `` ``
 
     0. * b.js *
 
-      `` `Js
-      Var PI = 3.14
+      `` `js
+      var PI = 3.14
 
-      Var circle = {
+      var circle = {
         PI: 3.14159,
         C: r => 2 * this.PI * r
       }
@@ -94,13 +94,13 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
     0. * c.js *
 
-      `` `Js
-      Var PI = 3.14
+      `` `js
+      var PI = 3.14
 
-      Var circle = {
+      var circle = {
         PI: 3.14159,
         C (r) {
-          Return 2 * this.PI * r
+          return 2 * this.PI * r
         }
       }
 
@@ -115,50 +115,50 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
   > Based on the syntax of the prototype chain sugar, simple, clear; object-oriented programming more easily.
   > Will not be any other language Tucao!
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     // old
-    Function cat () {
-      This.voice = 'miao'
+    function cat () {
+      this.voice = 'miao'
     }
     Cat.prototype.speak = function () {
-      Console.log (this.voice)
+      console.log (this.voice)
     }
 
-    Function Lion () {
-      This.voice = 'roar'
+    function Lion () {
+      this.voice = 'roar'
     }
 
     Lion.prototype = Cat.prototype
 
-    Var c = new Cat ()
-    Var l = new Lion ()
+    var c = new Cat ()
+    var l = new Lion ()
     C.speak ()
     L.speak ()
     `` ``
 
-    `` `Js
+    `` `js
     // new
-    Class Cat {
-      Constructor () {
-        This.voice = 'miao'
+    class Cat {
+      constructor () {
+        this.voice = 'miao'
       }
 
-      Speak () {
-        Console.log (this.voice)
+      speak () {
+        console.log (this.voice)
       }
     }
 
-    Class Lion extends Cat {
-      Constructor () {
+    class Lion extends Cat {
+      constructor () {
         Super ()
 
-        This.voice = 'roar'
+        this.voice = 'roar'
       }
     }
-    Var c = new Cat ()
-    Var l = new Lion ()
+    var c = new Cat ()
+    var l = new Lion ()
     C.speak ()
     L.speak ()
     `` ``
@@ -167,18 +167,18 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
     0. * cat.js *
 
-      `` `Js
-      Class Cat {
-        Constructor () {
-          This.voice = 'miao'
+      `` `js
+      class Cat {
+        constructor () {
+          this.voice = 'miao'
         }
 
         Speak () {
-          Console.log (this.voice)
+          console.log (this.voice)
         }
 
         Static type () {
-          Return Cat.name.toLowercase ()
+          return Cat.name.toLowercase ()
         }
       }
 
@@ -187,27 +187,27 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
     0. * getters-setters.js *
 
-      `` `Js
-      Class Cat {
-        Constructor (options) {
-          This.voice = 'miao'
-          This.options = options || {}
+      `` `js
+      class Cat {
+        constructor (options) {
+          this.voice = 'miao'
+          this.options = options || {}
         }
 
         Speak () {
-          Console.log (this.voice)
+          console.log (this.voice)
         }
 
         Get name () {
-          Return this.options.name
+          return this.options.name
         }
 
         Set name (name) {
-          This.options.name = name
+          this.options.name = name
         }
       }
 
-      Var a = new Cat ({name: 'Garfield'})
+      var a = new Cat ({name: 'Garfield'})
       // a.name?
       // a.name = 'Tom'
       // a.name?
@@ -215,23 +215,23 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
     0. * [mixins.js] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) *
 
-      `` `Js
-      Var CalculatorMixin = Base => class extends Base {
+      `` `js
+      var CalculatorMixin = Base => class extends Base {
         Calc () {}
       }
 
-      Var RandomizerMixin = Base => class extends Base {
+      var RandomizerMixin = Base => class extends Base {
         Randomize () {}
       }
 
-      Class Foo {}
-      Class Bar extends CalculatorMixin (RandomizerMixin (Foo)) {}
+      class Foo {}
+      class Bar extends CalculatorMixin (RandomizerMixin (Foo)) {}
 
       // Bar.prototype?
       `` ``
 
 
-### Enhanced Object Literals
+### Enhanced object Literals
 
   Improved object declaration:
 
@@ -243,32 +243,32 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
   - attribute name calculation
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     // old
-    Var a = 1
-    Var b = 2
-    Var c = 3
+    var a = 1
+    var b = 2
+    var c = 3
 
-    Var o = {
-      A: a,
-      B: b
-      C: c,
-      D: function () {
-        Return this.a + this.b + this.c
+    var o = {
+      a: a,
+      b: b
+      c: c,
+      d: function () {
+        return this.a + this.b + this.c
       }
     }
     `` ``
 
-    `` `Js
+    `` `js
     // new
-    Var o = {
-      A,
-      B,
-      C,
-      D () {
-        Return this.a + this.b + this.c
+    var o = {
+      a,
+      b,
+      c,
+      d () {
+        return this.a + this.b + this.c
       }
     }
     `` ``
@@ -277,19 +277,19 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
     0. * returns.js *
 
-      `` `Js
-      Var generate = (name, age) => ({name, age})
+      `` `js
+      var generate = (name, age) => ({name, age})
 
       // generate ('github', 5)?
       `` ``
 
     0. * cumputed-properties.js *
 
-      `` `Js
-      Var create = (path, verb) => {
-        Return {
-          Path,
-          Verb,
+      `` `js
+      var create = (path, verb) => {
+        return {
+          path,
+          verb,
           ['Is' + verb [0] .toUpperCase () + verb.substring (1)]: true
         }
       }
@@ -299,16 +299,16 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
     0. * complicated.js *
 
-      `` `Js
-      Var path = '/'
-      Var verb = 'get'
-      Var root = {
-        Path,
-        Verb
+      `` `js
+      var path = '/'
+      var verb = 'get'
+      var root = {
+        path,
+        verb
       }
 
-      Var route = {
-        Root
+      var route = {
+        root
       }
       `` ``
 
@@ -324,26 +324,26 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
   - also support the string is not escaped, no resolution
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     // old
-    Var first = 1
-    Var second = 2
-    Var third = 3
+    var first = 1
+    var second = 2
+    var third = 3
 
-    Var str = 'No.' + first + '\ n' +
+    var str = 'No.' + first + '\ n' +
       'No.' + second + '\ n' +
       'No.' + third
     `` ``
 
-    `` `Js
+    `` `js
     // new
-    Var first = 1
-    Var second = 2
-    Var third = 3
+    var first = 1
+    var second = 2
+    var third = 3
 
-    Var str = `No. $ {first}
+    var str = `No. $ {first}
     No. $ {second}
     No. $ {third}
     `
@@ -353,9 +353,9 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
     0. * raw-tag.js *
 
-      `` `Js
-      Var t0 = `In ES5" \ n "is a line-feed.`
-      Var t1 = String.raw`In ES5 "\ n" is a line-feed.`
+      `` `js
+      var t0 = `In ES5" \ n "is a line-feed.`
+      var t1 = String.raw`In ES5 "\ n" is a line-feed.`
 
       // console.log (t0)
       // console.log (t1)
@@ -363,9 +363,9 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
     0. * expression.js *
 
-      `` `Js
-      Var a = 5
-      Var b = 10
+      `` `js
+      var a = 5
+      var b = 10
 
       // console.log ("Fifteen is" + (a + b) + "and \ nnot" + (2 * a + b) + ".")
       // console.log (`Fifteen is $ {a + b} and \ nnot $ {2 * a + b} .`)
@@ -373,14 +373,14 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
     0. * custom-tag.js *
 
-      `` `Js
-      Var generatePath = (strings, ... values) => {
-        Return strings [0] + values.reduce ((prev, curr) => `$ {prev} / $ {curr}`, '')
+      `` `js
+      var generatePath = (strings, ... values) => {
+        return strings [0] + values.reduce ((prev, curr) => `$ {prev} / $ {curr}`, '')
       }
 
-      Var user = 'user'
-      Var id = '233'
-      Var profile = 'profile'
+      var user = 'user'
+      var id = '233'
+      var profile = 'profile'
       // generatePath`GET: $ {user} $ {id} $ {profile} `
       `` ``
 
@@ -391,75 +391,78 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
 
   > You can easily get the elements of an object, array, and so on, and assign it to the specified variable
 
-  - Array ArrayObjects, etc, objects with an iterator interface
+  - Array Arrayobjects, etc, objects with an iterator interface
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     // old
-    Var arr = [1, 2, 3, 4]
+    var arr = [1, 2, 3, 4]
 
-    Var a0 = arr [0]
-    Var a1 = arr [1]
-    Var a2 = arr [2]
+    var a0 = arr [0]
+    var a1 = arr [1]
+    var a2 = arr [2]
 
-    Var obj = {
-      Name: 'github',
-      Age: 5
+    var obj = {
+      name: 'github',
+      age: 5
     }
 
-    Var name = obj.name
-    Var age = obj.age
+    var name = obj.name
+    var age = obj.age
     `` ``
 
-    `` `Js
+    `` `js
     // new
-    Var arr = [1, 2, 3, 4]
+    var arr = [1, 2, 3, 4]
 
-    Var [a0, a1, a2] = arr
+    var [a0, a1, a2] = arr
 
-    Var obj = {
-      Name: 'github',
-      Age: 5
+    var obj = {
+      name: 'github',
+      age: 5
     }
 
-    Var {name, age} = obj
+    var {name, age} = obj
     `` ``
 
   Guess guess
 
     0. * print.js *
 
-      `` `Js
-      Var print = ({name, age}) => console.log (name, age)
+      `` `js
+      var print = ({name, age}) => console.log (name, age)
 
       // print ({name: 'ES6', age: 2015})?
       `` ``
 
     0. * alias.js *
 
-      `` `Js
-      Var js = {name: 'ES6', age: 2015}
+      `` `js
+      var js = {name: 'ES6', age: 2015}
 
-      Var {name: es, age} = js
+      var {name: es, age} = js
       // name, es, age
       `` ``
 
     0. * defaults.js *
 
-      `` `Js
-      Var js = {name: 'ES6', age: 2015}
-      Var date = [2015, 9, 14]
+      `` `js
+      var js = {name: 'ES6', age: 2015}
+      var date = [2015, 9, 14]
 
-      Var {version = '6'} = js
+      var {version = '6'} = js
       // version?
 
-      Var {fullname: f = 'ECMAScript 6'} = js
+      var {fullname: f = 'ECMAScript 6'} = js
       // fullname, f?
 
-      Var [y, m, d, h = 9] = date
+      var [y, m, d, h = 9] = date
       // y, m, d, h?
-      `` ``### Default + Rest + Spread
+      `` ``
+      
+### Default + Rest + Spread
+
 Default value, the remaining parameters (Rest), array expansion (Spread)
 
   - Default: Reduces the amount of code that checks the input parameters, ie, it is readable and concise
@@ -468,52 +471,52 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
   - Spread: can be seen as Rest anti-operation, more convenient for the operation of the array
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     // old
-    Function bar (a) {
-      A = a || 5
+    function bar (a) {
+      a = a || 5
     }
 
-    Function sum (a) {
-      A = a || 5
-      Var l = arguments.length
-      Var i = 1
-      For (; i <l; ++ i) {
-        A + = arguments [i]
+    function sum (a) {
+      a = a || 5
+      var l = arguments.length
+      var i = 1
+      for (; i <l; ++ i) {
+        a + = arguments [i]
       }
-      Return a
+      return a
     }
 
-    Function apply () {
-      Function fn () {}
-      Var l = arguments.length
-      Var args = new Array (l)
-      For (var i = 0; i <l; ++ i) {
-        Args [i] = arguments [i]
+    function apply () {
+      function fn () {}
+      var l = arguments.length
+      var args = new Array (l)
+      for (var i = 0; i <l; ++ i) {
+        args [i] = arguments [i]
       }
-      Fn.apply (null, args)
+      fn.apply (null, args)
     }
     `` ``
 
-    `` `Js
+    `` `js
     // new
-    Function bar (a = 5) {
+    function bar (a = 5) {
     }
 
-    Function sum (a = 5, ... args) {
-      Var l = args.length
-      Var i = 0
-      For (; i <l; ++ i) {
-        A + = args [i]
+    function sum (a = 5, ... args) {
+      var l = args.length
+      var i = 0
+      for (; i <l; ++ i) {
+        a + = args [i]
       }
-      Return a
+      return a
     }
 
-    Function apply (... args) {
-      Function fn () {}
-      Fn.apply (null, args)
+    function apply (... args) {
+      function fn () {}
+      fn.apply (null, args)
     }
     `` ``
 
@@ -521,53 +524,53 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
     0. * string.js *
 
-      `` `Js
-      Var str = '1234567890'
+      `` `js
+      var str = '1234567890'
 
       // [... str]?
       `` ``
 
     0. * concat.js *
 
-      `` `Js
-      Var a = [1, 2, 3]
-      Var b = [6, 5, 4]
+      `` `js
+      var a = [1, 2, 3]
+      var b = [6, 5, 4]
 
-      Var c = [... a, ... b]
+      var c = [... a, ... b]
       // c?
       `` ``
 
     0. * parse-args.js *
 
-      `` `Js
+      `` `js
       / **
        * Parse the parameters to return to a particular format
        *
        * @return {Array} [arr, options, cb]
        * /
 
-      Function parseArgs (... args) {
-        Const last = args [args.length - 1]
-        Const type = typeof last
-        Let opts
-        Let cb
+      function parseArgs (... args) {
+        const last = args [args.length - 1]
+        const type = typeof last
+        let opts
+        let cb
 
-        If ('function' === type) {
+        if ('function' === type) {
           Cb = args.pop ()
-          If ('object' === typeof args [args.length - 1]) {
+          if ('object' === typeof args [args.length - 1]) {
             Opts = args.pop ()
           }
-        } Else if ('object' === type &&! Array.isArray (last)) {
+        } else if ('object' === type &&! Array.isArray (last)) {
           Opts = args.pop ()
-        } Else if ('undefined' === type) {
-          Args.pop ()
-          Return parseArgs (... args)
+        } else if ('undefined' === type) {
+          args.pop ()
+          return parseArgs (... args)
         }
 
-        If (Array.isArray (args [0])) {
-          Args = args [0]
+        if (Array.isArray (args [0])) {
+          args = args [0]
         }
-        Return [args, opts || {}, cb]
+        return [args, opts || {}, cb]
       }
 
       // parseArgs ('users')?
@@ -579,7 +582,7 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
       `` ``
 
 
-### Let + Const
+### let + const
 
   Variable, constant definition statement:
 
@@ -589,39 +592,39 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
   - const: one-time statement
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     // old
     // function scope to override the global scope
-    Var bar = 1
-    Var bar = 3
-    Function method () {
-      Console.log (bar) // undefined
-      Var bar = 2
+    var bar = 1
+    var bar = 3
+    function method () {
+      console.log (bar) // undefined
+      var bar = 2
     }
 
     // variable leaks
-    Var s = 'hello';
-    For (var i = 0; i <s.length; i ++) {
-      Console.log (s [i]);
+    var s = 'hello';
+    for (var i = 0; i <s.length; i ++) {
+      console.log (s [i]);
     }
-    Console.log (i); // 5
+    console.log (i); // 5
     `` ``
 
-    `` `Js
+    `` `js
     // new
-    Let bar0 = 1
-    Let bar1 = 3
+    let bar0 = 1
+    let bar1 = 3
 
-    Function method () {
-      Console.log (bar0)
-      Let bar3 = 2
+    function method () {
+      console.log (bar0)
+      let bar3 = 2
     }
 
-    Var s = 'hello';
-    For (let i = 0; i <s.length; i ++) {
-      Console.log (s [i]);
+    var s = 'hello';
+    for (let i = 0; i <s.length; i ++) {
+      console.log (s [i]);
     }
     `` ``
 
@@ -629,10 +632,10 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
     0. * global.js *
 
-      `` `Js
-      Var a = 1
-      Let b = 2
-      Const c = 3
+      `` `js
+      var a = 1
+      let b = 2
+      const c = 3
 
       // this.a?
       // this.b?
@@ -641,16 +644,16 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
     0. * for.js *
 
-      `` `Js
-      Var s = 'hello';
-      For (let i = 0; i <s.length; i ++) {
-        Console.log (s [i]);
+      `` `js
+      var s = 'hello';
+      for (let i = 0; i <s.length; i ++) {
+        console.log (s [i]);
       }
-      Console.log (i); //?
+      console.log (i); //?
       `` ``
 
 
-### Iterators + For..Of
+### Iterators + for..Of
 
   Iterators and `for..of`
 
@@ -660,23 +663,23 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
   - The built-in iterable types are String, Array, TypedArray, Map, Set, because the `[Symbol.iterator]` method already exists on their prototype objects.
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     // old
-    Var arr = [1, 2, 3]
+    var arr = [1, 2, 3]
 
-    For (let i in arr) {
-      Console.log (i)
+    for (let i in arr) {
+      console.log (i)
     }
     `` ``
 
-    `` `Js
+    `` `js
     // new
-    Var arr = [1, 2, 3]
+    var arr = [1, 2, 3]
 
-    For (let i of arr) {
-      Console.log (i)
+    for (let i of arr) {
+      console.log (i)
     }
     `` ``
 
@@ -684,39 +687,39 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
     0. * for-loops.js *
 
-      `` `Js
+      `` `js
       Array.prototype.arrCustom = function () {}
-      Var arr = [1, 2, 3]
+      var arr = [1, 2, 3]
       Arr.isArray = true
 
-      For (let i in arr) {
-        Console.log (i) //?
+      for (let i in arr) {
+        console.log (i) //?
       }
 
-      For (let i of arr) {
-        Console.log (i) //?
+      for (let i of arr) {
+        console.log (i) //?
       }
       `` ``
 
     0. * iterable.js *
 
-      `` `Js
-      Var iterable = {
+      `` `js
+      var iterable = {
         [Symbol.iterator] () {
-          Return {
-            I: 0,
-            Next () {
-              Return {
-                Done: this.i === 10,
-                Value: this.i ++
+          return {
+            i: 0,
+            next () {
+              return {
+                done: this.i === 10,
+                value: this.i ++
               }
             }
           }
         }
       }
 
-      For (const i of iterable) {
-        Console.log (i) //?
+      for (const i of iterable) {
+        console.log (i) //?
       }
 
       // [... iterable]?
@@ -724,32 +727,32 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
     0. * iterator.js *
 
-      `` `Js
-      Var iterable = {
+      `` `js
+      var iterable = {
         [Symbol.iterator] () {
-          Return {
-            I: 0,
-            Next () {
-              Const done = this.i === 10
-              Const value = done? Undefined: this.i ++
-              Return {done, value}
+          return {
+            i: 0,
+            next () {
+              const done = this.i === 10
+              const value = done? undefined: this.i ++
+              return {done, value}
             }
           }
         }
       }
 
-      Const iterator = iterable [Symbol.iterator] ()
+      const iterator = iterable [Symbol.iterator] ()
 
-      Iterator.next () //?
-      Iterator.next () //?
-      Iterator.next () //?
+      iterator.next () //?
+      iterator.next () //?
+      iterator.next () //?
       // ...
 
-      Const iterator2 = iterable [Symbol.iterator] ()
+      const iterator2 = iterable [Symbol.iterator] ()
 
-      Iterator2.next () //?
-      Iterator2.next () //?
-      Iterator2.next () //?
+      iterator2.next () //?
+      iterator2.next () //?
+      iterator2.next () //?
       // ...
       `` ``
 ### Generators
@@ -768,109 +771,109 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
   - can be assigned
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     // old
-    Var iterable = {
+    var iterable = {
       [Symbol.iterator] () {
-        Return {
+        return {
           I: 0,
           Next () {
-            Const done = this.i === 10
-            Const value = done? Undefined: this.i ++
-            Return {done, value}
+            const done = this.i === 10
+            const value = done? undefined: this.i ++
+            return {done, value}
           }
         }
       }
     }
-    Const iterator = iterable [Symbol.iterator] ()
+    const iterator = iterable [Symbol.iterator] ()
     `` ``
 
-    `` `Js
+    `` `js
     // new
-    Function * generatable () {
-      For (let i = 0, l = 10; i <l; ++ i) {
-        Yield i
+    function * generatable () {
+      for (let i = 0, l = 10; i <l; ++ i) {
+        yield i
       }
     }
-    Const iterator = generatable ()
+    const iterator = generatable ()
     `` ``
 
   Guess guess
 
     0. * generatable.js *
 
-      `` `Js
-      Function * generatable () {
-        For (let i = 0, l = 10; i <l; ++ i) {
-          Yield i
+      `` `js
+      function * generatable () {
+        for (let i = 0, l = 10; i <l; ++ i) {
+          yield i
         }
       }
-      Const iterator = generatable ()
+      const iterator = generatable ()
 
-      For (const i of generatable ()) {
-        Console.log (i) //?
+      for (const i of generatable ()) {
+        console.log (i) //?
       }
       // [... generatable ()]?
       `` ``
 
     0. * next.js *
 
-      `` `Js
-      Function * range (min = 0, max = 10, step = 1) {
-        For (; min <max; min + = step) {
-          Let rest = yield min
-          If (rest) min = step * -1
+      `` `js
+      function * range (min = 0, max = 10, step = 1) {
+        for (; min <max; min + = step) {
+          let rest = yield min
+          if (rest) min = step * -1
         }
       }
 
-      Const iterator = range ()
+      const iterator = range ()
 
-      Iterator.next () //?
-      Iterator.next () //?
-      Iterator.next () //?
-      Iterator.next (true) //?
-      Iterator.next () //?
-      Iterator.next () //?
-      Iterator.next () //?
+      iterator.next () //?
+      iterator.next () //?
+      iterator.next () //?
+      iterator.next (true) //?
+      iterator.next () //?
+      iterator.next () //?
+      iterator.next () //?
 
-      Const iterator2 = range (0, 100, 2)
+      const iterator2 = range (0, 100, 2)
 
       [... iterator2] //?
-      Iterator.next () //?
+      iterator.next () //?
       `` ``
 
     0. * return.js *
 
-      `` `Js
-      Function * range (min = 0, max = 10, step = 1) {
-        For (; min <max; min + = step) {
-          Let rest = yield min
-          If (rest) min = step * -1
+      `` `js
+      function * range (min = 0, max = 10, step = 1) {
+        for (; min <max; min + = step) {
+          let rest = yield min
+          if (rest) min = step * -1
         }
       }
 
-      Const iterator = range ()
-      Iterator.next ()
-      Iterator.next (true)
-      Iterator.next ()
-      Iterator.return () //?
-      Iterator.next () //?
-      Iterator.return (1) //?
-      Iterator.next () //?
+      const iterator = range ()
+      iterator.next ()
+      iterator.next (true)
+      iterator.next ()
+      iterator.return () //?
+      iterator.next () //?
+      iterator.return (1) //?
+      iterator.next () //?
       `` ``
 
     0. * yield.js *
 
-      `` `Js
-      Function * g () {
-        Yield 1
-        Yield 2
-        Yield 3
-        Yield * [4, 5, 6]
-        Yield * 'Hello World!'
-        Yield 7
+      `` `js
+      function * g () {
+        yield 1
+        yield 2
+        yield 3
+        yield * [4, 5, 6]
+        yield * 'Hello World!'
+        yield 7
       }
 
       [... g ()] //?
@@ -915,13 +918,13 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
   > 真的太方便了，比如想对 Array 进行扩展，现在无需修改 `Array.prototype`，`extends Array` 就可以了。
 
-  - Array Boolean String Number Map Set Error RegExp Function Promise
+  - Array Boolean String Number Map Set Error RegExp function Promise
 
   * e.g.
 
     ```js
     // old
-    // This is danger.
+    // this is danger.
     Array.prototype.sum = function () {
       return this.reduce((t, curr) => t + curr, 0)
     }
@@ -1000,52 +1003,53 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
       middleware.compose(ctx)
       console.log(ctx.arr) // ?
       ```
+
 ### Unicode
 
-  Unicode
+   Unicode
 
-  - 加强对 Unicode 的支持，并且扩展了字符串对象
+   - Enhanced support for Unicode, and extended string objects
 
-  * e.g.
+   * E.g.
 
-    ```js
-    // same as ES5.1
-    "𠮷".length == 2
+     `` `Js
+     // same as ES5.1
+     "𠮷" .length == 2
 
-    // new RegExp behaviour, opt-in ‘u’
-    "𠮷".match(/./u)[0].length == 2
+     // new RegExp behaviour, opt-in 'u'
+     "𠮷" .match (/./ u) [0] .length == 2
 
-    // new form
-    "\u{20BB7}" == "𠮷" == "\uD842\uDFB7"
+     // new form
+     "\ U {20BB7}" == "𠮷" == "\ uD842 \ uDFB7"
 
-    // new String ops
-    "𠮷".codePointAt(0) == 0x20BB7
+     // new String ops
+     "𠮷" .codePointAt (0) == 0x20BB7
 
-    // for-of iterates code points
-    for(var c of "𠮷") {
-      console.log(c);
-    }
-    ```
+     // for-of iterates code points
+     for (var c of "𠮷") {
+       console.log (c);
+     }
+     `` ``
 
 
-### Modules ?
+### Modules
 
-  模块化系统目前还未实现！
+   Modular system is not yet available!
 
 
 ### Subclassable Built-ins
 
-  子类可继承自内置数据类型
+   Subclasses can inherit from built-in data types
 
-  > 真的太方便了，比如想对 Array 进行扩展，现在无需修改 `Array.prototype`，`extends Array` 就可以了。
+   > Really too convenient, such as want to expand the Array, and now no need to modify the `Array.prototype`,` extends Array` on it.
 
-  - Array Boolean String Number Map Set Error RegExp Function Promise
+  - Array Boolean String Number Map Set Error RegExp function Promise
 
   * e.g.
 
     ```js
     // old
-    // This is danger.
+    // this is danger.
     Array.prototype.sum = function () {
       return this.reduce((t, curr) => t + curr, 0)
     }
@@ -1070,7 +1074,8 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
     a.sum()
     ```
 
-  * 猜猜猜
+* Guess guess
+
 
     0. *[middleware.js](https://github.com/trekjs/middleware)*
 
@@ -1131,28 +1136,28 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
   Added `Map``set`` WeakMap`` WeakSet` Several efficient data types
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     // Sets
-    Var s = new Set ();
+    var s = new Set ();
     ("Hello"). Add ("goodbye"). Add ("hello");
     S.size === 2;
     S.has ("hello") === true;
 
     // Maps
-    Var m = new Map ();
-    M.set ("hello", 42);
-    M.set (s, 34);
-    M.get (s) == 34;
+    var m = new Map ();
+    m.set ("hello", 42);
+    m.set (s, 34);
+    m.get (s) == 34;
 
     // Weak Maps
-    Var wm = new WeakMap ();
+    var wm = new WeakMap ();
     Wm.set (s, {extra: 42});
     Wm.size === undefined
 
     // Weak Sets
-    Var ws = new WeakSet ();
+    var ws = new WeakSet ();
     Ws.add ({data: 42});
     // Because the added object has no other references, it will not be held in the set
     `` ``
@@ -1163,111 +1168,111 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
   > `Proxies` is the best solution when we do not want to expose the objects and do not want to operate them directly.
   > But when the increase in the `Proxies` this layer, the performance will still be affected.
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     // old
-    Const inner = {
-      Name: 'ES6'
+    const inner = {
+      name: 'ES6'
     }
 
-    Var outer = {
-      Inner,
-      Get name () {
-        Return this.inner.name
+    var outer = {
+      inner,
+      get name () {
+        return this.inner.name
       },
-      Set name (name) {
-        This.inner.name = name
+      set name (name) {
+        this.inner.name = name
       }
     }
 
     // outer.name
     `` ``
 
-    `` `Js
+    `` `js
     // new
-    Const inner = {
+    const inner = {
       Name: 'ES6'
     }
 
-    Var p = new Proxy (inner, {
+    var p = new Proxy (inner, {
       Get (target, name) {
-        Return target [name]
+        return target [name]
       },
 
       Set (target, name, value) {
-        If ('string'! == typeof value) throw new TypeError ('value must be String!')
+        if ('string'! == typeof value) throw new TypeError ('value must be String!')
         Target [name] = value
       }
     })
 
-    P.name
-    P.name = 2
-    P.name = 'ES2015'
+    p.name
+    p.name = 2
+    p.name = 'ES2015'
     `` ``
 
   Guess guess
 
     0. * [delegate-proxy.js] (https://github.com/fundon/delegate-proxy) *
 
-      `` `Js
-      Function delegateProxy (target, origin) {
-        Return new Proxy (target, {
-          Get (target, key, receiver) {
-            If (key in target) return Reflect.get (target, key, receiver)
-            Const value = origin [key]
-            Return 'function' === typeof value? Function method () {
-              Return value.apply (origin, arguments)
+      `` `js
+      function delegateProxy (target, origin) {
+        return new Proxy (target, {
+          get (target, key, receiver) {
+            if (key in target) return Reflect.get (target, key, receiver)
+            const value = origin [key]
+            return 'function' === typeof value? function method () {
+              return value.apply (origin, arguments)
             }: Value
           },
-          Set (target, key, value, receiver) {
-            If (key in target) return Reflect.set (target, key, value, receiver)
+          set (target, key, value, receiver) {
+            if (key in target) return Reflect.set (target, key, value, receiver)
             Origin [key] = value
-            Return true
+            return true
           }
         })
       }
 
-      Const bar = {
+      const bar = {
         N: 1,
 
         Add (i) {
-          This.n + = i
+          this.n + = i
         }
       }
 
-      Const foo = {
+      const foo = {
 
-        Set (n) {
-          This.n = n | 0
+        set (n) {
+          this.n = n | 0
         },
 
-        Sub (i) {
-          This.n - = i
+        sub (i) {
+          this.n - = i
         }
 
       }
 
-      Const p = delegateProxy (foo, bar)
+      const p = delegateProxy (foo, bar)
 
       Bar
       Foo
       P
 
-      P.n //?
-      P.add (1)
-      P.n //?
+      p.n //?
+      p.add (1)
+      p.n //?
 
-      P.sub (2)
-      P.n //?
+      p.sub (2)
+      p.n //?
 
-      P.set (1)
-      P.n //?
+      p.set (1)
+      p.n //?
 
-      P.n = 233
-      P.n //?
+      p.n = 233
+      p.n //?
       `` ``
-### [Symbols] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+### [Symbols] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Symbol)
 
   symbol:
 
@@ -1281,42 +1286,42 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
   > Want to give the object a signal, no longer difficult!
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     // old
-    Let obj = {
+    let obj = {
       Id: 1
     }
 
-    Obj.id // 1
-    Obj.id = 2
-    Obj.id // 2
+    obj.id // 1
+    obj.id = 2
+    obj.id // 2
     `` ``
 
-    `` `Js
+    `` `js
     // new
-    Let obj = {
+    let obj = {
       [Symbol ('id')]: 1
     }
 
-    Obj [Symbol ('id')] // undefined
-    Obj [Symbol ('id')] = 2
-    Obj [Symbol ('id')] // undefined
+    obj [Symbol ('id')] // undefined
+    obj [Symbol ('id')] = 2
+    obj [Symbol ('id')] // undefined
 
-    For (const k of Object.getOwnPropertySymbols (obj)) {
-      Console.log (obj [k])
+    for (const k of object.getOwnPropertySymbols (obj)) {
+      console.log (obj [k])
     }
     `` ``
 
 
-### Math + Number + String + Array + Object APIs
+### Math + Number + String + Array + object APIs
 
   New APIs, data manipulation is more convenient.
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     Number.EPSILON
     Number.isInteger (Infinity) // false
     Number.isNaN ("NaN") // false
@@ -1336,7 +1341,7 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
     ["A", "b", "c"]. Keys () // iterator 0, 1, 2
     ["A", "b", "c"]. Values ​​() // iterator "a", "b", "c"
 
-    Object.assign (Point, {origin: new Point (0,0)})
+    object.assign (Point, {origin: new Point (0,0)})
     `` ``
 
 
@@ -1344,9 +1349,9 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
   Binary `b`, octal` o` literally
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     0b111110111 === 503 // true
     0o767 === 503 // true
     0x1f7 === 503 // true
@@ -1358,18 +1363,18 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
   > In the face of asynchronous programming, `callback-hell` is the biggest criticism of JavaScript!
 
-  * E.g.
+  * e.g.
 
-    `` `Js
+    `` `js
     // old
     GetProfileById (233, (err, res) => {
-      If (err) throw err
+      if (err) throw err
       GetFollowing (233, (err, following) => {
-        If (err) throw err
+        if (err) throw err
         GetFollowers (233, (err, followers) => {
-          If (err) throw err
+          if (err) throw err
           GetStarred (233, (err, starred) => {
-            If (err) throw err
+            if (err) throw err
             //
           })
         })
@@ -1377,7 +1382,7 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
     })
     `` ``
 
-    `` `Js
+    `` `js
     // new
     GetProfileById (233)
       .then (res => getFollowing (233))
@@ -1391,20 +1396,20 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
     0. * simple-promise.js *
 
-      `` `Js
-      Function loadImage (url) {
-        Return new Promise ((resolve, reject) => {
-          Const img = new Image ()
+      `` `js
+      function loadImage (url) {
+        return new Promise ((resolve, reject) => {
+          const img = new Image ()
 
-          Img.onload = function () {
+          img.onload = function () {
             Resolve (img)
           }
 
-          Img.onerror = function () {
+          img.onerror = function () {
             Reject (new Error ('Could not load image at' + url))
           }
 
-          Img.url = url
+          img.url = url
         })
       }
 
@@ -1415,14 +1420,14 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
     0. * all.js *
 
-      `` `Js
-      Function delay (value, duration = 0) {
-        Return new Promise ((resolve, reject) => {
+      `` `js
+      function delay (value, duration = 0) {
+        return new Promise ((resolve, reject) => {
           SetTimeout (() => resolve (value), duration)
         })
       }
 
-      Let res = Promise.all ([
+      let res = Promise.all ([
         Delay (10, 1),
         Delay (8, 2),
         Delay (6, 3),
@@ -1432,20 +1437,20 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
       ])
 
       Res.then (arr => {
-        Console.log (arr) //?
+        console.log (arr) //?
       })
       `` ``
 
     0. * race.js *
 
-      `` `Js
-      Function delay (value, duration = 0) {
-        Return new Promise ((resolve, reject) => {
+      `` `js
+      function delay (value, duration = 0) {
+        return new Promise ((resolve, reject) => {
           SetTimeout (() => resolve (value), duration)
         })
       }
 
-      Let res = Promise.race ([
+      let res = Promise.race ([
         Delay (10, 1),
         Delay (8, 2),
         Delay (6, 3),
@@ -1454,44 +1459,44 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
         Delay (0, 6),
       ])
 
-      Res.then (arr => {
-        Console.log (arr) //?
+      res.then (arr => {
+        console.log (arr) //?
       })
       `` ``
 
     0. * reduce.js *
 
-      `` `Js
-      Const reduce = (arr, cb, initialValue = 0) => {
-        Return arr.reduce (cb, Promise.resolve (initialValue))
+      `` `js
+      const reduce = (arr, cb, initialValue = 0) => {
+        return arr.reduce (cb, Promise.resolve (initialValue))
       }
 
-      Const cb = (prev, curr) => prev.then (v => v + curr)
+      const cb = (prev, curr) => prev.then (v => v + curr)
 
-      Reduce ([1, 2, 3, 4, 5, 6, 7, 8, 9], cb)
+      reduce ([1, 2, 3, 4, 5, 6, 7, 8, 9], cb)
         .then (res => {
-          Console.log (res) //?
+          console.log (res) //?
         })
       `` ``
 
-### [Reflect API] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
+### [Reflect API] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Reflect)
 
   Reflective API: the object of the operation of the yuan, the effect of the opposite with the Proxy API
 
-  * E.g.
+  * e.g.
 
-    `` `Js
-    Var O = {a: 1};
-    Object.defineProperty (O, 'b', {value: 2});
-    O [Symbol ('c')] = 3;
+    `` `js
+    var o = {a: 1};
+    object.defineProperty (O, 'b', {value: 2});
+    o [Symbol ('c')] = 3;
 
-    Reflect.ownKeys (O); // ['a', 'b', Symbol (c)]
+    reflect.ownKeys (o); // ['a', 'b', Symbol (c)]
 
-    Function C (a, b) {
-      This.c = a + b;
+    function C (a, b) {
+      this.c = a + b;
     }
-    Var instance = Reflect.construct (C, [20, 22]);
-    Instance.c; // 42
+    var instance = Reflect.construct (C, [20, 22]);
+    instance.c; // 42
     `` ``
 
 
@@ -1502,18 +1507,18 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
 ## Quick experience
 
-> For more than the new features, experience some of the environment, including the browser and Node.js
+> for more than the new features, experience some of the environment, including the browser and Node.js
 
 
 ## Advanced application
 
 > In-depth learning characteristics, application production
 
-* Http://ramdajs.com/
+* http://ramdajs.com/
 
-* Https://github.com/cujojs/most
+* https://github.com/cujojs/most
 
-* Https://lodash.com/
+* https://lodash.com/
 
 * `Fs.readdir` problem
 
@@ -1521,7 +1526,7 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
   - https://github.com/w3c/filesystem-api
 
-* Https://github.com/kriskowal/gtor/#asynchronous-generator-functions
+* https://github.com/kriskowal/gtor/#asynchronous-generator-functions
 
 
 ## compatible, transcoding
@@ -1531,23 +1536,23 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
 ## other
 
-* Http://es6.ruanyifeng.com
+* http://es6.ruanyifeng.com
 
-* Https://github.com/lukehoban/es6features
+* https://github.com/lukehoban/es6features
 
-* Https://babeljs.io/docs/learn-es2015/
+* https://babeljs.io/docs/learn-es2015/
 
-* Https://ponyfoo.com/articles/tagged/es6-in-depth
+* https://ponyfoo.com/articles/tagged/es6-in-depth
 
-* Https://github.com/bevacqua/es6
+* https://github.com/bevacqua/es6
 
-* Https://github.com/DrkSephy/es6-cheatsheet
+* https://github.com/DrkSephy/es6-cheatsheet
 
-* Https://github.com/ericdouglas/ES6-Learning
+* https://github.com/ericdouglas/ES6-Learning
 
-* Https://github.com/addyosmani/es6-tools
+* https://github.com/addyosmani/es6-tools
 
-* Https://github.com/bevacqua/promisees
+* https://github.com/bevacqua/promisees
 
 
 ## License
