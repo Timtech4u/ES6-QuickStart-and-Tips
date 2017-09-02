@@ -461,15 +461,15 @@ ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-internat
       // y, m, d, h?
       `` ``
       
-### Default + Rest + Spread
+### Default + rest + Spread
 
-Default value, the remaining parameters (Rest), array expansion (Spread)
+Default value, the remaining parameters (rest), array expansion (Spread)
 
   - Default: Reduces the amount of code that checks the input parameters, ie, it is readable and concise
 
-  - Rest: more flexible for parameter array operations
+  - rest: more flexible for parameter array operations
 
-  - Spread: can be seen as Rest anti-operation, more convenient for the operation of the array
+  - Spread: can be seen as rest anti-operation, more convenient for the operation of the array
 
   * e.g.
 
@@ -1367,11 +1367,11 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
     `` `js
     // old
-    GetProfileById (233, (err, res) => {
+    getProfileById (233, (err, res) => {
       if (err) throw err
       GetFollowing (233, (err, following) => {
         if (err) throw err
-        GetFollowers (233, (err, followers) => {
+        getFollowers (233, (err, followers) => {
           if (err) throw err
           GetStarred (233, (err, starred) => {
             if (err) throw err
@@ -1384,7 +1384,7 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
     `` `js
     // new
-    GetProfileById (233)
+    getProfileById (233)
       .then (res => getFollowing (233))
       .then (res => getFollowers (233))
       .then (res => getStarred (233))
@@ -1402,18 +1402,18 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
           const img = new Image ()
 
           img.onload = function () {
-            Resolve (img)
+            resolve (img)
           }
 
           img.onerror = function () {
-            Reject (new Error ('Could not load image at' + url))
+            reject (new Error ('Could not load image at' + url))
           }
 
           img.url = url
         })
       }
 
-      LoadImage ('https://nodejs.org/static/images/logo-header.png')
+      loadImage ('https://nodejs.org/static/images/logo-header.png')
         .then (img => document.body.appendChild (img))
         .catch (err => console.log (err))
       `` ``
@@ -1423,17 +1423,17 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
       `` `js
       function delay (value, duration = 0) {
         return new Promise ((resolve, reject) => {
-          SetTimeout (() => resolve (value), duration)
+          setTimeout (() => resolve (value), duration)
         })
       }
 
       let res = Promise.all ([
-        Delay (10, 1),
-        Delay (8, 2),
-        Delay (6, 3),
-        Delay (4, 4),
-        Delay (2, 5),
-        Delay (0, 6),
+        delay (10, 1),
+        delay (8, 2),
+        delay (6, 3),
+        delay (4, 4),
+        delay (2, 5),
+        delay (0, 6),
       ])
 
       res.then (arr => {
@@ -1446,17 +1446,17 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
       `` `js
       function delay (value, duration = 0) {
         return new Promise ((resolve, reject) => {
-          SetTimeout (() => resolve (value), duration)
+          setTimeout (() => resolve (value), duration)
         })
       }
 
       let res = Promise.race ([
-        Delay (10, 1),
-        Delay (8, 2),
-        Delay (6, 3),
-        Delay (4, 4),
-        Delay (2, 5),
-        Delay (0, 6),
+        delay (10, 1),
+        delay (8, 2),
+        delay (6, 3),
+        delay (4, 4),
+        delay (2, 5),
+        delay (0, 6),
       ])
 
       res.then (arr => {
@@ -1520,7 +1520,7 @@ Default value, the remaining parameters (Rest), array expansion (Spread)
 
 * https://lodash.com/
 
-* `Fs.readdir` problem
+* `fs.readdir` problem
 
   - https://github.com/nodejs/node/issues/583
 
