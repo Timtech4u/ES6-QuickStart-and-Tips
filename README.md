@@ -204,7 +204,6 @@ class:
         get name () {
           return this.options.name
         }
-      }
 
         set name (name) {
           this.options.name = name
@@ -701,13 +700,6 @@ class:
       for (let i of arr) {
         console.log(i) // ?
       }
-
-      // parseArgs('users') ?
-      // parseArgs('users', {}) ?
-      // parseArgs('users', () => {}) ?
-      // parseArgs('users', {}, () => {}) ?
-      // parseArgs('users', 'books') ?
-      // parseArgs(['users', 'books']) ?
       ```
 
     0. *iterable.js*
@@ -864,7 +856,6 @@ class:
           if (rest) min = step * -1
         }
       }
-      const iterator = generatable()
 
       const iterator = range()
       iterator.next()
@@ -1363,19 +1354,6 @@ class:
         })
       ```
 
-      let res = Promise.all([
-        delay(10, 1),
-        delay(8, 2),
-        delay(6, 3),
-        delay(4, 4),
-        delay(2, 5),
-        delay(0, 6),
-      ])
-
-      res.then(arr => {
-        console.log(arr) // ?
-      })
-      ```
 
 ### [Reflect API] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
 
