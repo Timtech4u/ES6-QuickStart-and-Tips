@@ -395,7 +395,7 @@ class:
 
    > You can easily get objects, arrays, and so on, and assign values to the specified variable
 
-   - Array Array object, etc., with an iterator interface object
+   - Array, ArrayLike object, etc., with an iterator interface object
    
      * e.g.
 
