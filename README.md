@@ -1,62 +1,62 @@
 ES6: QuickStart and Tips
 ------------------------
 
-ES6: 快速体验，及实用小贴士
+ES6: quick experience, and practical tips
 
-> 2016 年是 ES6 大力推广和普及的黄金时期，也是今年的流行趋势，
-> 就一个 [ES6](https://github.com/search?o=desc&q=ES6&s=stars&type=Repositories&utf8=✓) 关键词，
-> 在 GitHub 上就有这么多搜索结果。（赶紧跟上大部队！）
+> 2016 is ES6 vigorously promote and popularize the golden age, but also this year's fashion trends,
+> On a [ES6] (https://github.com/search?o=desc&q=ES6&s=stars&type=Repositories&utf8=✓) keywords,
+> There are so many search results on GitHub. (Keep up with big troops!)
 
-![It's very hot!](images/github-search-results.png)
-
-
-## 简介
-
-ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.ecma-international.org/ecma-262/6.0/index.html)。
+! [It's very hot!] (Images / github-search-results.png)
 
 
-* ES5、ES2015 / ES6、ES2016 / ES7、ES2017 / ES8 这些关键词具体代表什么？
+## Introduction
 
-  [ES5] 发布于 2009 年。  
-
-  [ES6]，比起 ES5，是第一个大版本更新，在 2015-06 发布，所以又称 ES2015。  
-
-  [ES7 和 ES8] 统称为 ECMAScript Next。  
-
-  [ES7] 在 2016-06 发布，又称 ES2016。  
-
-  ES8 在 2017-06 发布，又称 ES2017。
-
-* ECMAScript 与 JavaScript 有什么关系？
-
-  前者是后者的语言标准，后者是前者的一个实现。
-
-* ES6 在浏览器，Node.js 支持如何，适不适合开发，生产？
-
-  - 浏览器： [ECMAScript 兼容列表](http://kangax.github.io/compat-table/es6/)
-
-  - Node.js：[ES2015 Support](http://node.green)
-
-  - 性能：[Performance of ES6 features relative to the ES5 baseline operations per second](https://kpdecker.github.io/six-speed/)
-
-  - 工具：使用一些转换工具，可以把 ES6 => ES5
+ES6 is short for ECMAScript 6 **, [EC6-262, version 6] (http://www.ecma-international.org/ecma-262/6.0/index.html).
 
 
-* 为什么要学习新语法？
+* ES5, ES2015 / ES6, ES2016 / ES7, ES2017 / ES8 What do these keywords mean?
 
-  当前很多库、框架、工具都在使用 **ES6+** 进行开发，典型的就是 React 和 Vue，使用新语法特性的优势进行快速开发，然后使用转换构建工具部署生产代码。
+  [ES5] was released in 2009.
+
+  [ES6], compared to ES5, is the first major update, released in 2015-06, so also known as ES2015.
+
+  [ES7 and ES8] collectively referred to as ECMAScript Next.
+
+  [ES7] released at 2016-06, also known as ES2016.
+
+  ES8 released in 2017-06, also known as ES2017.
+
+* What is the relationship between ECMAScript and JavaScript?
+
+  The former is the latter's language standard, the latter is an implementation of the former.
+
+* ES6 in the browser, Node.js support how suitable for development, production?
+
+  - Browser: [ECMAScript Compatibility List] (http://kangax.github.io/compat-table/es6/)
+
+  - Node.js: [ES2015 Support] (http://node.green)
+
+  - Performance: ES6 features relative to the ES5 baseline operations per second] (https://kpdecker.github.io/six-speed/)
+
+  - Tools: Using some conversion tools, you can put ES6 => ES5
 
 
-## ES6 新特性
+* Why learn new grammar?
+
+  Many libraries, frameworks, and tools are currently being developed using ** ES6 + **, typically React and Vue, using the advantages of new grammar features for rapid development, and then deploying production code using conversion build tools.
+
+
+## ES6 new features
 
 
 ### Arrows and Lexical This
 
-  「箭头」函数（`=>`）和 `this`：
+  "Arrow" function (`=>`) and `this`:
 
-  > 使用「箭头」函数我们可以体验函数式编程的”美”，高效、简洁，当然也要注意上下文 `this`。
-
-  * e.g.
+  > Use the "arrow" function we can experience the functional programming "beauty", efficient, simple, of course, also pay attention to the context `this`.
+  
+   * e.g.
 
     ```js
     // old
@@ -67,9 +67,9 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     // new
     var sum = (a, b) => a + b
     ```
-
-  * 猜猜猜
-
+    
+    * Guess guess
+    
     0. *a.js*
 
       ```js
@@ -109,13 +109,15 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
       ```
 
 
+
 ### Classes
 
-  类：
+class:
 
-  > 基于原型链的语法糖，简单、清晰；面向对象编程更加轻松。  
-  > 再也不会被其他语言吐槽了！
-
+   > Based on the syntax of the prototype chain sugar, simple, clear; object-oriented programming more easily.
+   > Will not be any other language Tucao!
+   
+   
   * e.g.
 
     ```js
@@ -164,7 +166,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     l.speak()
     ```
 
-  * 猜猜猜
+  * Guess guess
 
     0. *cat.js*
 
@@ -231,19 +233,19 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
       // Bar.prototype ?
       ```
 
-
 ### Enhanced Object Literals
 
-  改进对象声明：
+   Improved object declaration:
 
-  > 大大减少了代码量，创建对象更加简洁。
+   > Significantly reduces the amount of code, creating objects more concise.
 
-  - 属性缩写
+   - attribute abbreviation
 
-  - 函数缩写
+   - function abbreviation
 
-  - 属性名计算
-
+   - attribute name calculation
+   
+   
   * e.g.
 
     ```js
@@ -274,7 +276,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     }
     ```
 
-  * 猜猜猜
+  * Guess guess
 
     0. *returns.js*
 
@@ -314,19 +316,20 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
       ```
 
 
+
 ### Template Strings
 
-  模板字符串：
+   Template string:
 
-  > 终于可以舒服的写多行字符串了，这功能等到花儿都谢了！
+   > Finally, you can write more comfortable lines, and this function until the flowers are thanked!
 
-  - 支持多行
+   - support multiple lines
 
-  - 支持变量绑定
+   - Supports variable binding
 
-  - 也支持对字符串不转义，不解析
-
-  * e.g.
+   - also support the string is not escaped, not parsed
+   
+     * e.g.
 
     ```js
     // old
@@ -351,7 +354,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     `
     ```
 
-  * 猜猜猜
+  * Guess Guess
 
     0. *raw-tag.js*
 
@@ -386,16 +389,15 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
       // generatePath`GET: ${user}${id}${profile}`
       ```
 
-
 ### Destructuring
 
-  解析赋值
+   Parsing assignment
 
-  > 可以轻松获取对象、数组等的元素，并赋值到指定变量
+   > You can easily get objects, arrays, and so on, and assign values to the specified variable
 
-  - Array ArrayLike Object 等，具有迭代器接口的对象
-
-  * e.g.
+   - Array, ArrayLike object, etc., with an iterator interface object
+   
+     * e.g.
 
     ```js
     // old
@@ -428,7 +430,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     var { name, age } = obj
     ```
 
-  * 猜猜猜
+  * Guess guess
 
     0. *print.js*
 
@@ -463,17 +465,17 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
       // y, m, d, h ?
       ```
 
-
 ### Default + Rest + Spread
 
-  默认值、余下参数（Rest），数组展开（Spread）
+   Default, the remaining parameters (Rest), array expansion (Spread)
 
-  - 默认值： 减少了对输入参数的检查的代码量，即可读又简洁
+   - Default: Reduces the amount of code that checks the input parameters, ie, it is readable and concise
 
-  - Rest：对参数数组操作更加灵活
+   - Rest: more flexible for parameter array operations
 
-  - Spread：可以看作是 Rest 的反操作，更加方便对数组的操作
-
+   - Spread: can be seen as Rest anti-operation, more convenient for the operation of the array
+   
+   
   * e.g.
 
     ```js
@@ -523,7 +525,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     }
     ```
 
-  * 猜猜猜
+  * Guess Guess
 
     0. *string.js*
 
@@ -547,7 +549,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
 
       ```js
       /**
-       * 解析参数，返回特定格式
+       * Parse the parameters and return to a specific format
        *
        * @return {Array} [arr, options, cb]
        */
@@ -584,32 +586,30 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
       // parseArgs(['users', 'books']) ?
       ```
 
-
 ### Let + Const
 
-  变量、常量定义声明：
+   Variable, constant definition statement:
 
-  > 当满世界都是 `var` 的时候，变量管理是个神坑！
+   > When the world is `var` time, variable management is a god pit!
 
-  - 块级作用域
+   - Block level
 
-  - const: 一次性声明
+   - const: one-time statement
 
-  * e.g.
+   * e.g.
 
-    ```js
-    // old
-    // 函数作用域下覆盖全局作用域
-    var bar = 1
-    var bar = 3
-    function method () {
-      console.log(bar) // undefined
-      var bar = 2
-    }
+     `` `js
+     // old
+     / / Function scope under the coverage of the global scope
+     var bar = 1
+     var bar = 3
+     function method () {
+       console.log (bar) // undefined
+       var bar = 2
+     }
 
-    // 变量泄漏
-    var s = 'hello';
-    for (var i = 0; i < s.length; i++) {
+     // variable leaks
+         for (var i = 0; i < s.length; i++) {
       console.log(s[i]);
     }
     console.log(i); // 5
@@ -631,7 +631,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     }
     ```
 
-  * 猜猜猜
+  * Guess guess
 
     0. *global.js*
 
@@ -655,18 +655,16 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
       console.log(i); // ?
       ```
 
-
 ### Iterators + For..Of
 
-  迭代器和 `for..of`
+   Iterator and `for..of`
 
-  > 像 `[...arr]` 就是迭代器一个很好的例子。
+   > Like `[... arr]` is a good example of the iterator.
 
-  - 可迭代协议：ES6 定义了一套统一的标准，允许对 JavaScript 对象自定义它们的迭代行为。
+   - Iterative protocol: ES6 defines a set of uniform standards that allow JavaScript objects to customize their iterative behavior.
 
-  - 内置可迭代类型有 String，Array，TypedArray，Map，Set，因为在它们的原型对象上已经有了 `[Symbol.iterator]` 方法。
-
-  * e.g.
+   - The built-in iterable types are String, Array, TypedArray, Map, Set, because the `[Symbol.iterator]` method already exists on their prototype objects.
+     * e.g.
 
     ```js
     // old
@@ -686,7 +684,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     }
     ```
 
-  * 猜猜猜
+  * Guess guess
 
     0. *for-loops.js*
 
@@ -762,21 +760,21 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
 
 ### Generators
 
-  生成器：
+   Builder:
 
-  > 生成器大杀器！
+   > Generator big kill device!
 
-  - [可迭代](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#iterable)
+   - [iterable] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#iterable)
 
-  - [遵循迭代器协议](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#iterator)
+   - [follow the iterator protocol] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#iterator)
 
-  - 可在单个函数内 `GeneratorFunction` 自定义迭代逻辑，可以替代迭代器，功能更强大
+   - can be in a single function `GeneratorFunction` custom iteration logic, can replace the iterator, more powerful
 
-  - 可中断
+   - can be interrupted
 
-  - 可赋值
-
-  * e.g.
+   - can be assigned
+   
+     * e.g.
 
     ```js
     // old
@@ -805,7 +803,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     const iterator = generatable()
     ```
 
-  * 猜猜猜
+  * Guess guess
 
     0. *generatable.js*
 
@@ -884,49 +882,48 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
       [...g()] // ?
       ```
 
-
 ### Unicode
 
-  Unicode
+   Unicode
 
-  - 加强对 Unicode 的支持，并且扩展了字符串对象
+   - Enhanced support for Unicode, and extended string objects
 
-  * e.g.
+   * e.g.
 
-    ```js
-    // same as ES5.1
-    "𠮷".length == 2
+     `` `js
+     // same as ES5.1
+     "𠮷" .length == 2
 
-    // new RegExp behaviour, opt-in ‘u’
-    "𠮷".match(/./u)[0].length == 2
+     // new RegExp behaviour, opt-in 'u'
+     "𠮷" .match (/./ u) [0] .length == 2
 
-    // new form
-    "\u{20BB7}" == "𠮷" == "\uD842\uDFB7"
+     // new form
+     "\ u {20BB7}" == "𠮷" == "\ uD842 \ uDFB7"
 
-    // new String ops
-    "𠮷".codePointAt(0) == 0x20BB7
+     // new String ops
+     "𠮷" .codePointAt (0) == 0x20BB7
 
-    // for-of iterates code points
-    for(var c of "𠮷") {
-      console.log(c);
-    }
-    ```
+     // for-of iterates code points
+     for (var c of "𠮷") {
+       console.log (c);
+     }
+     `` ``
 
 
-### Modules ?
+### Modules?
 
-  模块化系统目前还未实现！
+   Modular system is not yet available!
 
 
 ### Subclassable Built-ins
 
-  子类可继承自内置数据类型
+   Subclasses can inherit from built-in data types
 
-  > 真的太方便了，比如想对 Array 进行扩展，现在无需修改 `Array.prototype`，`extends Array` 就可以了。
+   > Really too convenient, such as want to expand the Array, and now no need to modify the `Array.prototype`,` extends Array` on it.
 
-  - Array Boolean String Number Map Set Error RegExp Function Promise
-
-  * e.g.
+   - Array Boolean String Number Map Set Error RegExp Function Promise
+   
+     * e.g.
 
     ```js
     // old
@@ -955,7 +952,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     a.sum()
     ```
 
-  * 猜猜猜
+  * Guess guess
 
     0. *[middleware.js](https://github.com/trekjs/middleware)*
 
@@ -1010,12 +1007,11 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
       console.log(ctx.arr) // ?
       ```
 
-
 ### Map + Set + WeakMap + WeakSet
 
-  新增 `Map` `Set` `WeakMap` `WeakSet` 几种高效的数据类型
-
-  * e.g.
+   Add `Map``set`` WeakMap`` WeakSet` several efficient data types
+   
+     * e.g.
 
     ```js
     // Sets
@@ -1041,13 +1037,12 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     // Because the added object has no other references, it will not be held in the set
     ```
 
-
 ### Proxies
 
-  > 当我们不想把对象暴露出来，不想直接操作它们，想增加一层校验时，`Proxies` 是一个最佳方案。  
-  > 但当增加了 `Proxies` 这一层，对性能还是会有影响的。
-
-  * e.g.
+   > `Proxies` is the best solution when we do not want to expose the objects and do not want to operate them directly.
+   > But when the increase in the `Proxies` this layer, the performance will still be affected.
+   
+     * e.g.
 
     ```js
     // old
@@ -1090,7 +1085,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     p.name = 'ES2015'
     ```
 
-  * 猜猜猜
+  * Guess guess
 
     0. *[delegate-proxy.js](https://github.com/fundon/delegate-proxy)*
 
@@ -1152,22 +1147,21 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
       p.n       // ?
       ```
 
+### [Symbols] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
 
-### [Symbols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+   symbol:
 
-  符号：
+     - Uniqueness
 
-    - 唯一性
+     - immutable
 
-    - 不可变
+     - Object.getOwnPropertyNames (obj) `and` Object.keys (obj) `that are not included in the object
 
-    - 不列入对象的 `Object.getOwnPropertyNames(obj)` 和 `Object.keys(obj)`
+     - safe (in some cases can be used as a private property `key`)
 
-    - 安全（在一些场景下可以作为私有属性的 `key`）
-
-  > 想给对象打一个暗号，再也不难了！
-
-  * e.g.
+   > Want to give the object a signal, no longer difficult!
+   
+     * e.g.
 
     ```js
     // old
@@ -1198,7 +1192,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
 
 ### Math + Number + String + Array + Object APIs
 
-  新增 APIs，数据操作更加方便。
+  New APIs, data manipulation is more convenient.
 
   * e.g.
 
@@ -1228,7 +1222,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
 
 ### Binary and Octal Literals
 
-  二进制 `b`，八进制 `o` 字面量
+  Binary `b`, octal` o` literally
 
   * e.g.
 
@@ -1238,14 +1232,13 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     0x1f7 === 503 // true
     ```
 
-
 ### Promises
 
-  Promises：更加优雅的异步编程方式。想更加清晰了解 `Promise` 的执行过程，可以看这个可视化工具 [promisees](https://github.com/bevacqua/promisees)。
+   Promises: more elegant asynchronous programming. To see more clearly the implementation of `Promise`, you can see this visual tool [promisees] (https://github.com/bevacqua/promisees).
 
-  > 面对异步编程，`callback-hell` 就是 JavaScript 给人的最大诟病！  
-
-  * e.g.
+   > In the face of asynchronous programming, `callback-hell` is the biggest criticism of JavaScript!
+   
+     * e.g.
 
     ```js
     // old
@@ -1274,7 +1267,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
       // ...
     ```
 
-  * 猜猜猜
+  * Guess guess
 
     0. *simple-promise.js*
 
@@ -1362,11 +1355,11 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
       ```
 
 
-### [Reflect API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
+### [Reflect API] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
 
-  反射 API：公开了对象的元操作，效果跟 Proxy API 相反
-
-  * e.g.
+   Reflective API: exposes the object's meta operations, with the opposite of the proxy API
+   
+     * e.g.
 
     ```js
     var O = {a: 1};
@@ -1382,20 +1375,19 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
     instance.c; // 42
     ```
 
-
 ### Tail Calls
 
-  优化了尾递归算法，保证栈不会无限增长，使得尾递归算法安全。
+  Optimize the tail recursive algorithm to ensure that the stack will not grow indefinitely, making the tail recursive algorithm safe.
 
 
-## 快速体验
+## Quick experience
 
-> 对以上新特性，快速体验一番，环境包括 浏览器 和 Node.js
+> For more than the new features, experience some of the environment, including the browser and Node.js environment
 
 
-## 高级应用
+## Advanced application
 
-> 深入学习特性，应用生产
+> In-depth learning characteristics, application production
 
 * http://ramdajs.com/
 
@@ -1403,7 +1395,7 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
 
 * https://lodash.com/
 
-* `fs.readdir` 问题
+* `fs.readdir` problem
 
   - https://github.com/nodejs/node/issues/583
 
@@ -1412,12 +1404,12 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
 * https://github.com/kriskowal/gtor/#asynchronous-generator-functions
 
 
-## 兼容，代码转换
+## compatible, transcoding
 
-> 使用转换工具，对 ES6+ 的代码进行转换，适配浏览器或者 Node < v6
+> Use the conversion tool to convert the ES6 + code to fit the browser or Node <v6
 
 
-## 其他
+## other
 
 * http://es6.ruanyifeng.com
 
@@ -1440,18 +1432,18 @@ ES6 是 **ECMAScript 6** 的简称，是 [ECMA-262 的第 6 版本](http://www.e
 
 ## License
 
-授权：[署名-非商业性使用](https://creativecommons.org/licenses/by-nc/4.0/)
+Authorization: [signed - non-commercial use] (https://creativecommons.org/licenses/by-nc/4.0/)
 
 ---
 
-> [fundon.me](https://fundon.me) &nbsp;&middot;&nbsp;
-> GitHub [@fundon](https://github.com/fundon) &nbsp;&middot;&nbsp;
-> Twitter [@_fundon](https://twitter.com/_fundon)
+> [fundon.me] (https://fundon.me) & nbsp; & middot; & nbsp;
+> GitHub [@fundon] (https://github.com/fundon) & nbsp; & middot; & nbsp;
+> Twitter [@_fundon] (https://twitter.com/_fundon)
 
 [ES5]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_5_support_in_Mozilla
 
 [ES6]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla
 
-[ES7 和 ES8]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_Next_support_in_Mozilla
+[ES7 and ES8]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_Next_support_in_Mozilla
 
 [ES7]: http://www.ecma-international.org/ecma-262/7.0/index.html
